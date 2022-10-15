@@ -41,8 +41,8 @@ pipeline {
 	}
 			stage ('war-copy') {
 		steps {
-		dir ('/mnt') {
-			sh "sudo mkdir wars"
+		dir ('/mnt/wars') {
+		
 			sh "sudo chmod -R 777 /mnt"
 			sh "sudo cp /mnt/repo/docker3/gameoflife.war /mnt/wars"
 			
