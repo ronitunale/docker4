@@ -1,7 +1,7 @@
 pipeline {
 		agent {
 		node {
-			label ('172.31.39.238')
+			label ('172.31.4.90')
 		}
 		}
 
@@ -46,7 +46,7 @@ pipeline {
 		dir ('/mnt/wars') {
 		
 			sh "sudo chmod -R 777 /mnt"
-			sh "sudo cp /mnt/repo/docker3/gameoflife.war /mnt/wars"
+			sh "sudo cp /mnt/repo/docker4/gameoflife.war /mnt/wars"
 			
 		}
 		}	
@@ -55,7 +55,7 @@ pipeline {
 		stage ('Deploy-tomcat-on-docker') {
 		steps {
 		dir ('/mnt/yaml') {
-			sh "sudo cp /mnt/repo/docker3/docker-compose.yaml /mnt/yaml"
+			sh "sudo cp /mnt/repo/docker4/docker-compose.yaml /mnt/yaml"
 			sh "sudo docker-compose up -d"
 				
 	}
