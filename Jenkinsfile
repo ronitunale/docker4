@@ -1,7 +1,7 @@
 pipeline {
 		agent {
 		node {
-			label ('172.31.2.66')
+			label ('172.31.39.238')
 		}
 		}
 
@@ -33,12 +33,14 @@ pipeline {
 			sh "sudo rm -rf *"
 			sh "sudo git clone https://github.com/ronitunale/docker3.git"
 			sh "sudo chmod -R 777 /mnt"
-			sh "sudo cp /mnt/repo/docker3/docker-compose.yaml /mnt"
 			
 			
+			
 	}
 	}
 	}
+			
+			
 			stage ('war-copy') {
 		steps {
 		dir ('/mnt/wars') {
@@ -52,7 +54,8 @@ pipeline {
 	
 		stage ('Deploy-tomcat-on-docker') {
 		steps {
-		dir ('/mnt') {
+		dir ('/mnt/yaml') {
+			sh "sudo cp /mnt/repo/docker3/docker-compose.yaml /mnt/yaml"
 			sh "sudo docker-compose up -d"
 				
 	}
