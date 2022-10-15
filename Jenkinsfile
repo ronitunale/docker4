@@ -31,7 +31,7 @@ pipeline {
 		steps {
 		dir ('/mnt/repo') {
 			sh "sudo rm -rf *"
-			sh "sudo git clone https://github.com/ronitunale/docker3.git"
+			sh "sudo git clone https://github.com/ronitunale/docker4.git"
 			sh "sudo chmod -R 777 /mnt"
 			
 			
