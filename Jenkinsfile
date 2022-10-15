@@ -11,6 +11,7 @@ pipeline {
 	
 			sh "sudo yum install docker -y"
 			sh "sudo systemctl start docker"
+			sh "sudo yum install git -y"
 			sh "sudo chmod -R 777 /mnt"
 		
 	}
