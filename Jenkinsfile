@@ -6,12 +6,11 @@ pipeline {
 		}
 
 		stages {
-		stage ('install-git-docker') {
+		stage ('install-docker') {
 		steps {
 	
 			sh "sudo yum install docker -y"
 			sh "sudo systemctl start docker"
-			sh "sudo yum install git -y"
 			sh "sudo chmod -R 777 /mnt"
 		
 	}
@@ -32,9 +31,7 @@ pipeline {
 		dir ('/mnt/repo') {
 			sh "sudo rm -rf *"
 			sh "sudo git clone https://github.com/ronitunale/docker4.git"
-			sh "sudo chmod -R 777 /mnt"
-			
-			
+					
 			
 	}
 	}
