@@ -52,7 +52,7 @@ pipeline {
 		stage ('Deploy-tomcat-on-docker') {
 		steps {
 		dir ('/mnt') {
-			sh "docker-compose up -d"
+			sh "sudo docker-compose up -d"
 				
 	}
 	}
