@@ -1,7 +1,7 @@
 pipeline {
 		agent {
 		node {
-			label ('172.31.38.199')
+			label ('built-in')
 		}
 		}
 
