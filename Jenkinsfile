@@ -30,6 +30,7 @@ pipeline {
 		steps {
 		dir ('/mnt/repo') {
 			sh "sudo rm -rf *"
+			sh "sudo sleep 10"
 			sh "sudo git clone https://github.com/ronitunale/docker4.git"
 					
 			
